@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --Green-200: hsl(148, 38%, 91%);
+    --Green-600: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 54%);
+    --White: hsl(0, 0%, 100%);
+    --Grey-500: hsl(186, 15%, 59%);
+    --Grey-900: hsl(187, 24%, 22%);
+    font-size: 10px;
+}
+
+@font-face {
+    font-family: 'Karla';
+    src: url(assets/fonts/Karla-VariableFont_wght.ttf) format(truetype);
+    font-weight: 400 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fontBold';
+    src: url(assets/fonts/static/Karla-Bold.ttf);
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fontRegular';
+    src: url(assets/fonts/static/Karla-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Karla';
+    font-size: 10px;
+    min-height: 100vh;
+}
+
+main {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Green-200);
+    overflow: hidden;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--White);
+    margin: 1.2rem;
+    padding: 1.2rem;
+    border-radius: 10px;
+    font-size: 1.6rem;
+}
+
+.form-container form {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1.2rem;
+    gap: 1.5rem;
+}
+
+.form-container form .text-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container form .text-input .input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin: 1.2rem;
+    font-size: 1.6rem;
+}
+
+.form-container form .text-input .input input {
+    max-width: 100%;
+    padding: 1rem;
+    width: 270px;
+    border-radius: 5px;
+    border: 1px solid var(--Grey-900);
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: border-color .3s ease-in-out;
+}
+
+.form-container form .text-input .input input:hover {
+    border-color: var(--Green-600);
+}
+
