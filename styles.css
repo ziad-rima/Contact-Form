@@ -42,6 +42,14 @@ body {
     min-height: 100vh;
 }
 
+.input-hint.show {
+    display: block;
+}
+
+.error-hint.show {
+    display: block;
+}
+
 main {
     max-width: 100%;
     display: flex;
@@ -50,6 +58,12 @@ main {
     align-items: center;
     background-color: var(--Green-200);
     overflow: hidden;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+    margin-left: 1rem;
 }
 
 .form-container {
@@ -61,17 +75,13 @@ main {
     margin: 1.2rem;
     padding: 1.2rem;
     border-radius: 10px;
-    font-size: 1.6rem;
 }
 
 .form-container form {
-    max-width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 1.2rem;
-    gap: 1.5rem;
+    align-items: center;
+    width: 100%;
 }
 
 .form-container form .text-input {
@@ -79,6 +89,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: .6rem;
 }
 
 .form-container form .text-input .input {
@@ -106,3 +117,175 @@ main {
     border-color: var(--Green-600);
 }
 
+.form-container form .text-input .input input:focus {
+    outline: none !important;
+    border-color: var(--Green-600);
+    box-shadow: 0 0 10px var(--Green-200);
+}
+
+.form-container form .query-inputs {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.6rem;
+    gap: 1rem;
+}
+
+.form-container form .query-inputs .query-type {
+    align-self: flex-start;
+    font-size: 1.6rem;
+}
+
+.form-container form .query-inputs .radio-buttons {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 1.2rem 0;
+    gap: 1rem;
+}
+
+.form-container form .query-inputs .radio-buttons .radio-button {
+    border: 1px solid var(--Grey-900);
+    width: 270px;
+    padding: .9rem 1.2rem .9rem 1.2rem;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.radio-buttons .radio-button label {
+    font-size: 1.6rem;
+    margin-left: 1.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    max-width: 100%;
+}
+
+.radio-button input[type="radio"] {
+    display: none;
+}
+
+.radio-button label svg {
+    display: inline-block !important;
+    margin-right: .1rem;
+}
+
+.radio-button label svg path {
+    fill: transparent;
+    stroke: var(--Grey-900);
+    stroke-width: 1;
+}
+
+.radio-buttons input[type="radio"]:checked + label svg path {
+    fill: var(--Green-600);
+    stroke: var(--Green-600);
+}
+
+.radio-button:hover {
+    border-color: var(--Green-600);
+    cursor: pointer;
+}
+
+.radio-button:hover label svg path {
+    stroke: var(--Green-600);
+}
+
+.message-input {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1.2rem;
+}
+
+.message-input .message-header {
+    font-size: 1.6rem;
+    align-self: flex-start;
+    margin-bottom: .8rem;
+}
+
+.message-input .text-area {
+    border-radius: 5px;
+    max-width: 100%;
+    align-self: flex-start;
+    width: 295px;
+    font-size: 1.6rem;
+}
+
+.message-input .text-area:focus {
+    outline: none !important;
+    border-color: var(--Green-600);
+    box-shadow: 0 0 10px var(--Green-200);
+}
+
+.consent {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;  /* so that they're properly aligned with the input-hint message*/
+    justify-content: center;
+    align-items: center;
+    margin: 4.2rem auto 4.2rem 1rem;
+}
+
+.consent .checkbox-consent {
+    align-self: flex-start;
+}
+
+.consent .checkbox-consent label {
+    display: inline-flex;
+    font-size: 1.6rem;
+    word-wrap: break-word;
+    gap: 1rem;
+    max-width: 100%;
+    width: 250px;
+}
+
+.consent .checkbox-consent input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-consent label svg {
+    display: inline-block !important;
+}
+
+.checkbox-consent label svg path {
+    fill: transparent;
+    stroke: var(--Grey-900);
+    stroke-width: 1;
+}
+
+.checkbox-consent input[type="checkbox"]:checked + label svg path {
+    fill: var(--Green-600);
+    stroke: var(--Green-200);
+}
+
+.checkbox-consent:hover {
+    cursor: pointer;
+}
+
+.checkbox-consent:hover label svg path {
+    stroke: var(--Green-600);
+}
+
+.form-container form .submit-button {
+    max-width: 100%;
+    background-color: var(--Green-600);
+    color: var(--White);
+    border-radius: 7px;
+    border-color: var(--Green-200);
+    padding: 1.6rem;
+    outline: none;
+    width: 290px;
+    text-align: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.form-container form .submit-button:hover {
+    box-shadow: 0 0 10px var(--Green-200);
+}

@@ -52,6 +52,22 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## My process
 
+I followed the mobile-first workflow for this project, I structured the html file like this: 
+```html
+<main>
+  <div class="form-container">
+    <form>
+      <h1>Contact Us</h1>
+      <div class="text-input"></div>
+      <div class="query-inputs"></div>
+      <div class="message-input"></div>
+      <div class="consent"></div>
+      <button></button>
+    </form>
+  </div>
+</main>
+```
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -67,27 +83,68 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
+I faced some difficulties when trying to substitute the default radio and checkbox buttons with the custom svg buttons, so after looking up some online resources and with the help of chatGPT, I finally figured it out:
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div id="radio-buttons" class="radio-buttons">
+
+  <div class="radio-button" id="radio-button">
+      <input type="radio" id="radio-btn1" name="radio-btn1">
+      <label for="radio-btn1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" 
+          height="21" fill="none" viewBox="0 0 20 21"><path fill="#0C7D69" 
+          d="M10 .75a9.75 9.75 0 1 0 9.75 9.75A9.76 
+          9.76 0 0 0 10 .75Zm0 18a8.25 8.25 0 1 1 
+          8.25-8.25A8.26 8.26 0 0 1 10 18.75Zm5.25-8.25a5.25 
+          5.25 0 1 1-10.499 0 5.25 5.25 0 0 1 10.499 0Z"/><svg>
+            General Equity
+      </label>
+  </div>
+
+  <div class="radio-button" id="radio-button">
+      <input type="radio" id="radio-btn2" name="radio-btn1">
+      <label for="radio-btn2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" 
+            height="21" fill="none" viewBox="0 0 20 21"><path fill="#0C7D69" 
+            d="M10 .75a9.75 9.75 0 1 0 9.75 9.75A9.76 
+            9.76 0 0 0 10 .75Zm0 18a8.25 8.25 0 1 1 
+            8.25-8.25A8.26 8.26 0 0 1 10 18.75Zm5.25-8.25a5.25 
+            5.25 0 1 1-10.499 0 5.25 5.25 0 0 1 10.499 0Z"/><svg>
+              Support Request
+        </label>
+  </div>
+</div>     
 ```
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.radio-button input[type="radio"] {
+  display: none;
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+.radio-button label svg {
+  display: inline-block !important;
+  margin-right: .1rem;
+}
+
+.radio-button label svg path {
+  fill: transparent;
+  stroke: var(--Grey-900);
+  stroke-width: 1;
+}
+
+.radio-buttons input[type="radio"]:checked + label svg path {
+  fill: var(--Green-600);
+  stroke: var(--Green-600);
+}
+
+.radio-button:hover {
+  border-color: var(--Green-600);
+  cursor: pointer;
+}
+
+.radio-button:hover label svg path {
+  stroke: var(--Green-600);
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
