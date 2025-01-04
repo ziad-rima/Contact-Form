@@ -42,12 +42,21 @@ body {
     min-height: 100vh;
 }
 
+.input-hint {
+    color: var(--Red);
+    font-size: 1.4rem;
+}
+
 .input-hint.show {
     display: block;
 }
 
 .error-hint.show {
     display: block;
+}
+
+input.error-state {
+    border: var(--Red);
 }
 
 main {
@@ -163,6 +172,7 @@ h1 {
     align-items: center;
     gap: 1.2rem;
     max-width: 100%;
+    cursor: pointer;
 }
 
 .radio-button input[type="radio"] {
@@ -178,6 +188,7 @@ h1 {
     fill: transparent;
     stroke: var(--Grey-900);
     stroke-width: 1;
+    cursor: pointer;
 }
 
 .radio-buttons input[type="radio"]:checked + label svg path {
@@ -192,6 +203,7 @@ h1 {
 
 .radio-button:hover label svg path {
     stroke: var(--Green-600);
+    cursor: pointer;
 }
 
 .message-input {
@@ -243,6 +255,7 @@ h1 {
     gap: 1rem;
     max-width: 100%;
     width: 250px;
+    cursor: pointer;
 }
 
 .consent .checkbox-consent input[type="checkbox"] {
@@ -288,4 +301,90 @@ h1 {
 
 .form-container form .submit-button:hover {
     box-shadow: 0 0 10px var(--Green-200);
+}
+
+.attribution {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    font-size: 1.4rem;
+    margin: 1rem; 
+}
+
+.attribution a {
+     color:rgb(35, 116, 116);
+     padding-left: .3rem;
+}
+
+.attribution a:hover {
+    color: rgb(12, 62, 62);;
+}
+
+@media (min-width: 720px) {
+    main {
+        padding: 4rem;
+    }
+
+    .form-container {
+        width: 600px;
+        padding: 2.4rem;
+        -webkit-box-shadow: 1px 8px 16px -2px rgba(0,0,0,0.75);
+        -moz-box-shadow: 1px 8px 16px -2px rgba(0,0,0,0.75);
+        box-shadow: 1px 8px 16px -2px rgba(0,0,0,0.75);
+    }
+    
+    .form-container form .text-input {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 1.2rem; 
+        max-width: 100%; 
+    }
+
+    .form-container form .text-input .input {
+        width: 45%;
+        margin: 1.2rem 1.6rem 1.2rem 0;
+    }
+
+    .form-container form .text-input .email-address {
+        width: 100%;
+    }
+
+    .form-container form .text-input .input input {
+        width: 100%;
+    }
+
+    .form-container form .query-inputs .radio-buttons{
+        flex-direction: row;
+    }
+
+    .message-input {
+        align-self: flex-start;
+        width: 100%;
+        padding: 0;
+        margin-left: -.1rem;
+    }
+
+    .message-input .text-area {
+        width: 100%;
+    }
+
+    .consent {
+        width: 100%;
+    }
+    
+    .consent .checkbox-consent {
+        align-self: self-start;
+    }
+
+    .consent .checkbox-consent label {
+        width: 100%;
+        font-size: 1.8rem;
+    }
+
+    .form-container form .submit-button {
+        width: 100%;
+    }
 }
