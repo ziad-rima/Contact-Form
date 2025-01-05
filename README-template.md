@@ -83,7 +83,7 @@ I followed the mobile-first workflow for this project, I structured the html fil
 
 ### What I learned
 
-I faced some difficulties when trying to substitute the default radio and checkbox buttons with the custom svg buttons, so after looking up some online resources and with the help of chatGPT, I finally figured it out:
+I faced some difficulties when trying to substitute the default radio with the custom svg buttons, so after looking up some online resources and with the help of chatGPT, I finally figured it out:
 ```html
 <div id="radio-buttons" class="radio-buttons">
 
@@ -145,6 +145,15 @@ I faced some difficulties when trying to substitute the default radio and checkb
 }
 ```
 
+I also learned about the `pointer-events` property in CSS when working with the success message, which controls how mouse interactions (like clicks, hovers, etc.) work for an element. When set to `none`:
+  - The element ignores all mouse actions.
+  - It's like the element is "invisible" to the mouse.
+
+While I was working on the script, I learned that I can target an element that immediately follows another element using this syntax:
+```js
+document.querySelector("#fname + .input-hint").style.display = "block";
+```
+Where `#fname` is the first element, and the element with the class `.input-hint` is positioned immediately after it, and is the one we are targeting. 
 
 ### Continued development
 

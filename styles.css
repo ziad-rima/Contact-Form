@@ -37,7 +37,7 @@
 }
 
 body {
-    font-family: 'Karla';
+    font-family: 'Karla', sans-serif;
     font-size: 10px;
     min-height: 100vh;
 }
@@ -45,18 +45,35 @@ body {
 .input-hint {
     color: var(--Red);
     font-size: 1.4rem;
+    display: none;
 }
 
-.input-hint.show {
-    display: block;
+.query-alert-message {
+    align-self: flex-start;
+    margin-top: -1.4rem;
+    margin-bottom: 1.2rem;
 }
 
-.error-hint.show {
-    display: block;
+.message-area-alert {
+    align-self: flex-start;
+    margin-top: 1rem;
 }
 
-input.error-state {
-    border: var(--Red);
+.consent-error-message {
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+/* error-state = form-error
+    input-hint = form-alert    
+*/
+input[type="text"].error-state,
+input[type="email"].error-state {
+    border: 1px solid var(--Red);
+}
+
+.required-input {
+    color: var(--Green-600);
 }
 
 main {
@@ -73,6 +90,7 @@ h1 {
     font-size: 3rem;
     margin-bottom: 1.2rem;
     margin-left: 1rem;
+    align-self: flex-start;
 }
 
 .form-container {
@@ -157,14 +175,6 @@ h1 {
     gap: 1rem;
 }
 
-.form-container form .query-inputs .radio-buttons .radio-button {
-    border: 1px solid var(--Grey-900);
-    width: 270px;
-    padding: .9rem 1.2rem .9rem 1.2rem;
-    max-width: 100%;
-    border-radius: 5px;
-}
-
 .radio-buttons .radio-button label {
     font-size: 1.6rem;
     margin-left: 1.7rem;
@@ -173,6 +183,18 @@ h1 {
     gap: 1.2rem;
     max-width: 100%;
     cursor: pointer;
+}
+
+.form-container form .query-inputs .radio-buttons .radio-button {
+    border: 1px solid var(--Grey-900);
+    width: 270px;
+    padding: .9rem 1.2rem .9rem 1.2rem;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.form-container form .query-inputs .radio-buttons .radio-button:active {
+    background-color: var(--Green-200);
 }
 
 .radio-button input[type="radio"] {
@@ -245,44 +267,22 @@ h1 {
 }
 
 .consent .checkbox-consent {
-    align-self: flex-start;
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;   
+}
+
+.consent .checkbox-consent input[type="checkbox"] {
+    cursor: pointer;
+    accent-color: var(--Green-600);
 }
 
 .consent .checkbox-consent label {
-    display: inline-flex;
     font-size: 1.6rem;
-    word-wrap: break-word;
     gap: 1rem;
     max-width: 100%;
     width: 250px;
     cursor: pointer;
-}
-
-.consent .checkbox-consent input[type="checkbox"] {
-    display: none;
-}
-
-.checkbox-consent label svg {
-    display: inline-block !important;
-}
-
-.checkbox-consent label svg path {
-    fill: transparent;
-    stroke: var(--Grey-900);
-    stroke-width: 1;
-}
-
-.checkbox-consent input[type="checkbox"]:checked + label svg path {
-    fill: var(--Green-600);
-    stroke: var(--Green-200);
-}
-
-.checkbox-consent:hover {
-    cursor: pointer;
-}
-
-.checkbox-consent:hover label svg path {
-    stroke: var(--Green-600);
 }
 
 .form-container form .submit-button {
@@ -290,17 +290,61 @@ h1 {
     background-color: var(--Green-600);
     color: var(--White);
     border-radius: 7px;
-    border-color: var(--Green-200);
+    border: 0;
     padding: 1.6rem;
-    outline: none;
+    outline: 0;
     width: 290px;
     text-align: center;
     font-size: 1.6rem;
     cursor: pointer;
+    transition: box-shadow .5s ease-in-out;
 }
 
 .form-container form .submit-button:hover {
-    box-shadow: 0 0 10px var(--Green-200);
+    box-shadow: 0 0 10px var(--Grey-900);
+}
+
+.success-message {
+    background-color: var(--Grey-900);
+    color: var(--Green-200);
+    width: 35ch;
+    padding: 1.6rem;
+    pointer-events: none;
+    opacity: 0;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: .35rem;
+    font-size: 1.4rem;
+}
+
+.success-message.active {
+    display: block;
+    pointer-events: all;
+    animation-name: fadeOut;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    0%, 25%, 50%, 75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.success-message .success-message-header {
+    color: var(--White);
+    margin-bottom: .5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.6rem;
 }
 
 .attribution {
@@ -309,7 +353,7 @@ h1 {
     align-items: center;
     max-width: 100%;
     font-size: 1.4rem;
-    margin: 1rem; 
+    margin: 1.2rem;
 }
 
 .attribution a {
@@ -386,5 +430,16 @@ h1 {
 
     .form-container form .submit-button {
         width: 100%;
+    }
+
+    .success-message {
+        width: max-content;
+        top: 10%;
+        padding: 1.5rem;
+    }
+
+    .attribution {
+        margin-top: 4rem;
+        font-size: 1.6rem;
     }
 }

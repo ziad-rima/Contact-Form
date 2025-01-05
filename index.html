@@ -12,37 +12,35 @@
 <body>
   <main>
     <div class="form-container">
-      <form>
-        <h1>Contact Us</h1>
+      <h1>Contact Us</h1>
+      <form class="form" id="form">
         <div class="text-input">
-
           <div class="first-name input">
-            <label for="fname">First Name *</label>
-            <input type="text" name="firstName" id="fname" class="required">
-            <p id="input-hint" class="input-hint" style="display: none;">This field is required</p>
+            <label for="fname">First Name <span class="required-input">*</span></label>
+            <input type="text" name="firstName" id="fname">
+            <p id="input-hint" class="input-hint">This field is required</p>
           </div>
 
           <div class="last-name input">
-            <label for="lname">Last Name *</label>
-            <input type="text" name="lastName" id="lname" class="required">
-            <p id="input-hint" class="input-hint" style="display: none;">This field is required</p>
+            <label for="lname">Last Name <span class="required-input">*</span></label>
+            <input type="text" name="lastName" id="lname">
+            <p id="input-hint" class="input-hint">This field is required</p>
           </div>
 
           <div class="email-address input">
-            <label for="email">Email Address *</label>
-            <input type="email" name="email" id="email" class="required">
-            <p id="error-hint" class="error-hint" style="display: none;">Please enter a valid email address</p>
-            <p id="input-hint" class="input-hint" style="display: none;">This field is required</p>
+            <label for="email">Email Address <span class="required-input">*</span></label>
+            <input type="email" name="email" id="email">
+            <p id="input-hint" class="input-hint">Please enter a valid email address</p>
           </div>
         </div>
 
         <div class="query-inputs">
-          <p class="query-type">Query Type *</p>
+          <label class="query-type">Query Type <span class="required-input">*</span></label>
 
           <div id="radio-buttons" class="radio-buttons">
 
             <div class="radio-button" id="radio-button">
-              <input type="radio" id="radio-btn1" name="radio-btn1">
+              <input type="radio" id="radio-btn1" name="radio-btn" value="General Enquiry">
               <label for="radio-btn1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" 
                 height="21" fill="none" viewBox="0 0 20 21"><path fill="#0C7D69" 
@@ -55,7 +53,7 @@
             </div>
 
             <div class="radio-button" id="radio-button">
-              <input type="radio" id="radio-btn2" name="radio-btn1">
+              <input type="radio" id="radio-btn2" name="radio-btn" value="support">
               <label for="radio-btn2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" 
                 height="21" fill="none" viewBox="0 0 20 21"><path fill="#0C7D69" 
@@ -68,51 +66,51 @@
             </div>
           </div>  
           
-          <p id="input-hint" class="input-hint" style="display: none;">Please select a query type</p>
+          <p id="input-hint" class="input-hint query-alert-message">Please select a query type</p>
           
         </div>
 
         <div class="message-input" id="message-input">
-          <p class="message-header">Message *</p>
+          <p class="message-header">Message <span class="required-input">*</span></p>
           <label for="message-area"></label>
           <textarea name="message" id="message-area" rows="12" cols="32" class="text-area required"></textarea>
-          <p id="input-hint" class="input-hint" style="display: none;">This field is required</p>
+          <p id="input-hint" class="input-hint message-area-alert">This field is required</p>
         </div>
 
         <div class="consent" id="consent">
           <div class="checkbox-consent" id="checkbox-consent">
             <input type="checkbox" id="checkbox-btn" name="checkbox-btn">
-            
-            <label for="checkbox-btn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
-              fill="none" viewBox="0 0 18 18"><path fill="#0C7D69" 
-              d="M16.5 0h-15A1.5 1.5 0 0 0 0 1.5v15A1.5 1.5 0 0 0 1.5 
-              18h15a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 16.5 0Zm-3.22 
-              7.28-5.25 5.25a.748.748 0 0 1-1.06 0l-2.25-2.25a.75.75 0 1 1 
-              1.06-1.06l1.72 1.72 4.72-4.72a.751.751 0 0 1 1.06 1.06Z"/></svg>
-              I consent to being contacted by the team *</label>
+            <label for="checkbox-btn">I consent to being contacted by the team <span class="required-input">*</span></label>
           </div>
 
-          <p id="input-hint" class="input-hint" style="display: none;">To submit this form, please consent to being contacted</p>
+          <p id="input-hint" class="input-hint consent-error-message">To submit this form, please consent to being contacted</p>
           
         </div>
 
-        <button type="submit" class="submit-button">Submit</button>
+        <button type="submit" class="submit-button" id="submit-button">Submit</button>
         
 
       </form>
     </div>
 
+
+    <div id="success-message" class="success-message">
+      <div class="success-message-header">
+        <img src="assets/images/icon-success-check.svg" alt="success icon">
+        Message Sent!
+      </div>
+
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+
+  
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/ziad-rima">Ziad Rima</a>.
+    </div>
+
   </main>
 
-<!--
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
--->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/ziad-rima">Ziad Rima</a>.
-  </div>
+  <script src="main.js"></script>
 </body>
 </html>
