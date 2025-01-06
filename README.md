@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://contactformfrontend.netlify.app/)
-- [Live Site URL](https://your-live-site-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/responsive-contact-form-sywF1P9HoF)
+- [Live Site URL](https://contactformfrontend.netlify.app/)
 
 ## My process
 
