@@ -67,8 +67,7 @@ body {
 /* error-state = form-error
     input-hint = form-alert    
 */
-input[type="text"].error-state,
-input[type="email"].error-state {
+.error-state {
     border: 1px solid var(--Red);
 }
 
