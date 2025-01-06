@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://contactformfrontend.netlify.app/)
+- [Live Site URL](https://your-live-site-url.com)
 
 ## My process
 
@@ -161,7 +161,7 @@ Compared to my earlier projects, I now feel relatively comfortable working with 
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ziad-rima)
+- Frontend Mentor - [@ziad-rima](https://www.frontendmentor.io/profile/ziad-rima)
 - X - [@rima4082](https://www.twitter.com/yourusername)
 - GitHub - [@ziad-rima](https://github.com/ziad-rima)
 
