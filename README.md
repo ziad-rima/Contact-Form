@@ -14,9 +14,6 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://ww
   - [Continued development](#continued-development)
 - [Author](#author)
 
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -114,6 +111,7 @@ I faced some difficulties when trying to substitute the default radio with the c
   </div>
 </div>     
 ```
+CSS:
 ```css
 .radio-button input[type="radio"] {
   display: none;
