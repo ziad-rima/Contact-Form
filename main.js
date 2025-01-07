@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             isConsentValid 
         ) {
             successMessage.classList.add('active');
+            form.reset();
         }
     });
 });
